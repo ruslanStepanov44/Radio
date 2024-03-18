@@ -14,13 +14,12 @@ public class Radio {
     }
 
 
-
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation > stationAmount -1) {
+        if (newCurrentRadioStation > stationAmount - 1) {
             return;
         }
         if (newCurrentRadioStation < 0) {
@@ -30,11 +29,11 @@ public class Radio {
     }
 
     public void next() {
-        if (currentRadioStation == stationAmount -1) {
+        if (currentRadioStation == stationAmount - 1) {
             currentRadioStation = 0;
 
         } else {
-            currentRadioStation ++;
+            currentRadioStation++;
         }
     }
 
@@ -42,7 +41,7 @@ public class Radio {
         if (currentRadioStation == 0) {
             currentRadioStation = stationAmount - 1;
         } else {
-            currentRadioStation --;
+            currentRadioStation--;
         }
     }
 
