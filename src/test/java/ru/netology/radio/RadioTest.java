@@ -18,6 +18,17 @@ public class RadioTest {
     }
 
     @Test
+    public void setCurrentRadioStation2() {
+        Radio radio = new Radio(10);
+
+        radio.setCurrentRadioStation(9);
+        int actual = radio.getCurrentRadioStation();
+        int expected = 9;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void setStationMoreMax() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(10);
@@ -60,6 +71,17 @@ public class RadioTest {
     }
 
     @Test
+    public void nextStationAfterMax2() {
+        Radio radio = new Radio(10);
+        radio.setCurrentRadioStation(9);
+        radio.next();
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void prevStation() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(5);
@@ -73,6 +95,17 @@ public class RadioTest {
     @Test
     public void prevStationAfterMin() {
         Radio radio = new Radio();
+        radio.setCurrentRadioStation(0);
+        radio.prev();
+
+        int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void prevStationAfterMin1() {
+        Radio radio = new Radio(10);
         radio.setCurrentRadioStation(0);
         radio.prev();
 
