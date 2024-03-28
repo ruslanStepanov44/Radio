@@ -3,7 +3,7 @@ package ru.netology.radio;
 public class Radio {
     private int currentRadioStation;
     private int currentVolume;
-    public int stationAmount = 10;
+    private int stationAmount = 10;
 
     public Radio(int stationAmount) {
         this.stationAmount = stationAmount;
